@@ -80,14 +80,17 @@ Ce dossier contient **5 sous-dossiers** principaux (utilisé pour les 2parties):
 - FP
 - Transformers
 - Final
-  
+- Task 2
+- Annexe 1
+- Annexe 2
 ---
 
-================
+==============
 Partie 1 
-================
+==============
 
 Dans le cadre de ce Hackathon, nous avons décidé pour les tâches 1 et 3 (détéction sur un set de test uniforme) de combiner plusieurs modèles.
+
 Ce premier travail s'effectuera sur les sous-dossier : 
 
 - DNN_Descriptor
@@ -101,7 +104,7 @@ Dans les dataset nous avions 3 types de features :
 - FingerPrints (FP)
 - SMILES
 
-Nous avons donc décidé de traiter ces 3 types de données séparemment mais toujours avec un but final précis: Combiner les forces de nos modèles.
+En s'inspirant du papier de recherche CardioTox net, nous avons donc décidé de traiter ces 3 types de données séparemment mais toujours avec un but final précis: Combiner les forces de nos modèles sur chaque partie des données.
 
 
 1) Pour les données **Descriptives**, nous avons entraîné un Multi Layer Perceptron (MLP) qui nous a permis d'obtenir des résultats cohérents (environ 80% accuracy comme les 3modèles suivants)
@@ -117,9 +120,23 @@ La deuxième approche était de faire un **GCNN (Graph Convultional NN)** qui pe
 
 Pour la prédiction final, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1. Nous avons essayé d'abord avec un **réseau de neurone dense** comme nous suggérait certains papier de recherche, cependant les résultats n'étant pas au rendez-vous sur notre set de validation (surement due à un manque de data). Ainsi nous avons plutôt obpté pour des méthodes plus traditionnels comme en prenant simplement **la moyenne, un vote de majorité, puis finallement avec une régression logistique**.
 
-================
+==============
 Partie 2
-================
+==============
+
+Ce second travail s'effectuera sur le sous-dossier : 
+
+- Task 2
+
+La tâche 2 travaillé sur cette partie necessite de faire de la prédiction maintenant sur des séries (clusters de molécules) isolés par rapport au données d'entrainement.
+
+Le premier réflexe a été de construire à l'aide de **la mesure de Tanimoto**, un set d'entrainement ressemblant à celui de test.
+Beaucoup d'ajustement ont du être fait : comment perdre le moins de data possible, combien de cellule par cluster dans le train...
+C'est à travers de nombreux test que cela a pu se résoudre (voir Annexe 2 pour certains détails).
+
+Une fois ce nouveau jeu d'entraînement construit, il nous a suffit d'essayer et de comparer des modèles simples de la bonne manière. Finalement c'est un **Random Forest** bien parametré qui nous a permis d'avoir les meilleurs résultats sur cette tâche.
+
+
 
 
 
