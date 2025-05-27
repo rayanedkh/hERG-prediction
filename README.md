@@ -32,8 +32,10 @@ Pour les données type **SMILES**, nous avons opté pour 2 startégies asez diff
 
 La deuxième approche était de faire un **GCNN (Graph Convultional NN)** qui permet donc de traiter d'une assez belle manière la chimie moléculaire car dans ce cadre les atomes sont des noeuds et leurs laisons sont les arêtes du graph. Un GNN était donc une solution idéale pour ce type de data et ce type de prblématique de classification binaire.
 
+A la fin, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1.
+
 Ce hackathon était avant tout un moyen d'apprendre en s'ammusant, nous avons donc décidé de faire les 2 approches et d'aller jusqu'au bout dans l'objectif que les 2 soient complémentaire sur les data.
 
-A la fin, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1.
+
 
 
