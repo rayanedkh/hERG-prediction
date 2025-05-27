@@ -2,7 +2,7 @@
 
 ---
 
-About the data:
+About the project:
 
 The following datasets are provided for the hackathon at Ecole Telecom Paris with the student association,
 taking place from 05/23/2025 to 05/25/2025.
