@@ -57,14 +57,20 @@ All molecular features were generated using the rdkit package (https://www.rdkit
 ---
 ---
 
+================
 # Présentation
+================
 
 Nous avons effectué ce projet en équipe de 3 (Merci à mes compagnons Noa Andre et Rayane Dakhlaoui) et sommes arrivés finaliste.
 
 Ce hackathon était avant tout un moyen d'apprendre en s'ammusant, en découvrant énormément de chose, de méthodes. 
-De plus cette experience nous a permis de développer notre coordination et la gestion d'un projet de ce type en équipe;
+De plus cette experience nous a permis de développer notre coordination et la gestion d'un projet de ce type en équipe.
 
+---
+
+================
 ## Notre Travail
+================
 
 Ce dossier contient **5 sous-dossiers**:
 
@@ -99,7 +105,7 @@ Pour les données type **SMILES**, nous avons opté pour 2 startégies asez diff
 
 La deuxième approche était de faire un **GCNN (Graph Convultional NN)** qui permet donc de traiter d'une assez belle manière la chimie moléculaire car dans ce cadre les atomes sont des noeuds et leurs laisons sont les arêtes du graph. Un GNN était donc une solution idéale pour ce type de data et ce type de prblématique de classification binaire.
 
-A la fin, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1. Nous avons essayé d'abord avec un réseau de neurone dense comme nous suggérait certains papier de recherche, cependant les résultats n'étant pas au rendez-vous sur notre set de validation (surement due à un manque de data). Ainsi nous avons plutôt obpté pour des méthodes plus traditionnels comme en prenant simplement la moyenne, un vote de majorité, puis finallement avec une régression logistique.
+A la fin, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1. Nous avons essayé d'abord avec un **réseau de neurone dense** comme nous suggérait certains papier de recherche, cependant les résultats n'étant pas au rendez-vous sur notre set de validation (surement due à un manque de data). Ainsi nous avons plutôt obpté pour des méthodes plus traditionnels comme en prenant simplement **la moyenne, un vote de majorité, puis finallement avec une régression logistique**.
 
 
 
