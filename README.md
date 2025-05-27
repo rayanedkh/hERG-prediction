@@ -58,7 +58,7 @@ All molecular features were generated using the rdkit package (https://www.rdkit
 ---
 
 ================
-# Présentation
+Présentation
 ================
 
 Nous avons effectué ce projet en équipe de 3 (Merci à mes compagnons Noa Andre et Rayane Dakhlaoui) et sommes arrivés finaliste.
@@ -69,7 +69,7 @@ De plus cette experience nous a permis de développer notre coordination et la g
 ---
 
 ================
-## Notre Travail
+Notre Travail
 ================
 
 Notre travail se décompose en 2 parties.
@@ -84,7 +84,7 @@ Ce dossier contient **5 sous-dossiers** principaux (utilisé pour les 2parties):
 ---
 
 ================
-### Partie 1 
+Partie 1 
 ================
 
 Dans le cadre de ce Hackathon, nous avons décidé pour les tâches 1 et 3 (détéction sur un set de test uniforme) de combiner plusieurs modèles.
@@ -118,7 +118,7 @@ La deuxième approche était de faire un **GCNN (Graph Convultional NN)** qui pe
 Pour la prédiction final, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1. Nous avons essayé d'abord avec un **réseau de neurone dense** comme nous suggérait certains papier de recherche, cependant les résultats n'étant pas au rendez-vous sur notre set de validation (surement due à un manque de data). Ainsi nous avons plutôt obpté pour des méthodes plus traditionnels comme en prenant simplement **la moyenne, un vote de majorité, puis finallement avec une régression logistique**.
 
 ================
-### Partie 1 
+Partie 2
 ================
 
 
