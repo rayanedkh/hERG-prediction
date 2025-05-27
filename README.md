@@ -136,7 +136,13 @@ C'est à travers de nombreux test que cela a pu se résoudre (voir Annexe 2 pour
 
 Une fois ce nouveau jeu d'entraînement construit, il nous a suffit d'essayer et de comparer des modèles simples de la bonne manière. Finalement c'est un **Random Forest** bien parametré qui nous a permis d'avoir les meilleurs résultats sur cette tâche.
 
+===========
+Bonus
+===========
 
+Dans les dossiers Annexe 1 et Annexe 2 figurent un lot d'essai qui n'ont pas été conservé pour le résultat final, mais qui nous a permis de mieux comprendre les datas et de mieux agir en conséquences.
+Pour la plupart cela constitue en réseaux de neurone n'ayant pas aboutis (sur GCNN ou simple DNN), de méthodes simples comme XGBoost, RandomForest ou encore LightGB.
+Il peut être intéressant de les regarder pour mieux comprendre comme notre projet a évolué, et pourquoi nous avons fait certains choix au lieu d'autres.
 
 
 
