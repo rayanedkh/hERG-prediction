@@ -55,8 +55,9 @@ Molecules in the datasets were sanitized using Qubit-pharmaceuticals preprocessi
 All molecular features were generated using the rdkit package (https://www.rdkit.org/).
 
 ---
+---
 
-### Présentation
+# Présentation
 
 Nous avons effectué ce projet en équipe de 3 (Merci à mes compagnons Noa Andre et Rayane Dakhlaoui) et sommes arrivés finaliste.
 
