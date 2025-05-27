@@ -11,9 +11,9 @@ This event is organized by MARGO and Qubit-pharmaceuticals.
 The aim of this event is to build a binary classifier capable of predicting whether a molecule is toxic or not.
 The toxicity studied here is that associated with hERG inhibition, cause of heart problems for certain drugs.
 
-====================
+================
 Dataset Description
-====================
+================
 
 3 datasets are provided in the csv (comma-separated) format:
 
@@ -43,9 +43,9 @@ Dataset Description
 
 All molecular features & fingerprints were generated using the rdkt (https://www.rdkit.org/) python package version 2023.03.1.
 
-================
+===========
 Copyright notice
-================
+===========
 
 Datasets used during the event were made available in the following Article.
 Karim, A., Lee, M., Balle, T. et al. CardioTox net: a robust predictor for hERG channel blockade based on
