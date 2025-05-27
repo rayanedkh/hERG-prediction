@@ -12,7 +12,7 @@ The aim of this event is to build a binary classifier capable of predicting whet
 The toxicity studied here is that associated with hERG inhibition, cause of heart problems for certain drugs.
 
 ====================
-DATASETS DESCRIPTION
+Dataset Description
 ====================
 
 3 datasets are provided in the csv (comma-separated) format:
@@ -44,7 +44,7 @@ DATASETS DESCRIPTION
 All molecular features & fingerprints were generated using the rdkt (https://www.rdkit.org/) python package version 2023.03.1.
 
 ================
-COPYRIGHT NOTICE
+Copyright notice
 ================
 
 Datasets used during the event were made available in the following Article.
@@ -72,7 +72,23 @@ De plus cette experience nous a permis de développer notre coordination et la g
 ## Notre Travail
 ================
 
-Ce dossier contient **5 sous-dossiers**:
+Notre travail se décompose en 2 parties.
+Ce dossier contient **5 sous-dossiers** principaux (utilisé pour les 2parties):
+
+- DNN_Descriptor
+- GNN
+- FP
+- Transformers
+- Final
+  
+---
+
+================
+### Partie 1 
+================
+
+Dans le cadre de ce Hackathon, nous avons décidé pour les tâches 1 et 3 (détéction sur un set de test uniforme) de combiner plusieurs modèles.
+Ce premier travail s'effectuera sur les sous-dossier : 
 
 - DNN_Descriptor
 - GNN
@@ -80,9 +96,7 @@ Ce dossier contient **5 sous-dossiers**:
 - Transformers
 - Final
 
-Dans le cadre de ce Hackathon, nous avons décidé pour les tâches 1 et 3 (détéction sur un set de test uniforme) de combiner plusieurs modèles.
-
-Dans les dataset nous avions 3 types de features
+Dans les dataset nous avions 3 types de features : 
 - Descriptives
 - FingerPrints (FP)
 - SMILES
@@ -90,26 +104,22 @@ Dans les dataset nous avions 3 types de features
 Nous avons donc décidé de traiter ces 3 types de données séparemment mais toujours avec un but final précis: Combiner les forces de nos modèles.
 
 
-Pour les données **Descriptives**, nous avons entraîné un Multi Layer Perceptron (MLP) qui nous a permis d'obtenir les résultats suivant:
-**Cross-validation results:**
-- Mean Accuracy: **0.8050 (±0.0050)**
-- Mean Kappa: **0.6098 (±0.0102)**
+1) Pour les données **Descriptives**, nous avons entraîné un Multi Layer Perceptron (MLP) qui nous a permis d'obtenir des résultats cohérents (environ 80% accuracy comme les 3modèles suivants)
 
-Pour les données type **FingerPrints (FP)**, nous avons entrainé un XGBoost dont les hyperparamètres ont été optimisé avec Optuna. Nous avions un autre prétedant, le **Random Forrest** qui est assez intéressant notamment pour la réduction de la variance. Mais les résultats du XGBoost étaient légèrement meilleurs, ce qui nous a conduit vers ce choix.
+2) Pour les données type **FingerPrints (FP)**, nous avons entrainé un XGBoost dont les hyperparamètres ont été optimisé avec Optuna. Nous avions un autre prétedant, le **Random Forrest** qui est assez intéressant notamment pour la réduction de la variance. Mais les résultats du XGBoost étaient légèrement meilleurs, ce qui nous a conduit vers ce choix.
 Le XGBoost avec Optuna modèle nous a permis d'obtenir les résultats suivant:
 
-- Cohen's Kappa: **0.6387962055039826**
-- Accuracy: **0.8194370685077005**
 
-Pour les données type **SMILES**, nous avons opté pour 2 startégies asez différentes. La première était de fine-tuner le modèle **seyonec/ChemBERTa-zinc-base-v1**, qui est une adaptation de RoBERTa (qui est lui même un modèle de type **Transformer** initialement conçu pour le langage naturel) qui a été entrainé non pas sur du texte classique, mais sur des représentations chimiques de molécules au format SMILES. L'objectif était donc claire finetuner un modèle capable de comprendre les données au format SMILES dans l'objectif d'une classification binaire. Pour la tokenization, nous nous sommes basés sur la même source. EN effet, nous avons utilisé **RobertaForSequenceClassification** qui est une classe de Hugging Face Transformers qui ajoute une tête de classification (typiquement une couche linéaire) au-dessus du modèle RoBERTa.
+4) Pour les données type **SMILES**, nous avons opté pour 2 startégies asez différentes. La première était de fine-tuner le modèle **seyonec/ChemBERTa-zinc-base-v1**, qui est une adaptation de RoBERTa (qui est lui même un modèle de type **Transformer** initialement conçu pour le langage naturel) qui a été entrainé non pas sur du texte classique, mais sur des représentations chimiques de molécules au format SMILES. L'objectif était donc claire finetuner un modèle capable de comprendre les données au format SMILES dans l'objectif d'une classification binaire. Pour la tokenization, nous nous sommes basés sur la même source. EN effet, nous avons utilisé **RobertaForSequenceClassification** qui est une classe de Hugging Face Transformers qui ajoute une tête de classification (typiquement une couche linéaire) au-dessus du modèle RoBERTa.
 
 La deuxième approche était de faire un **GCNN (Graph Convultional NN)** qui permet donc de traiter d'une assez belle manière la chimie moléculaire car dans ce cadre les atomes sont des noeuds et leurs laisons sont les arêtes du graph. Un GNN était donc une solution idéale pour ce type de data et ce type de prblématique de classification binaire.
 
-A la fin, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1. Nous avons essayé d'abord avec un **réseau de neurone dense** comme nous suggérait certains papier de recherche, cependant les résultats n'étant pas au rendez-vous sur notre set de validation (surement due à un manque de data). Ainsi nous avons plutôt obpté pour des méthodes plus traditionnels comme en prenant simplement **la moyenne, un vote de majorité, puis finallement avec une régression logistique**.
 
+Pour la prédiction final, on utilise les probabilités obtenues grace au 4 méthodes ci-dessus pour créer un méta-modèle et obtenir une nouvelle probabilité qui nous permmetra déjà de classer pour la task3, puis ensuite pour la task 1. Nous avons essayé d'abord avec un **réseau de neurone dense** comme nous suggérait certains papier de recherche, cependant les résultats n'étant pas au rendez-vous sur notre set de validation (surement due à un manque de data). Ainsi nous avons plutôt obpté pour des méthodes plus traditionnels comme en prenant simplement **la moyenne, un vote de majorité, puis finallement avec une régression logistique**.
 
-
-
+================
+### Partie 1 
+================
 
 
 
