@@ -61,8 +61,8 @@ All molecular features were generated using the rdkit package (https://www.rdkit
 
 Nous avons effectué ce projet en équipe de 3 (Merci à mes compagnons Noa Andre et Rayane Dakhlaoui) et sommes arrivés finaliste.
 
-Ce hackathon était avant tout un moyen d'apprendre en s'ammusant, nous avons donc décidé de faire les 2 approches et d'aller jusqu'au bout dans l'objectif que les 2 soient complémentaire sur les data.
-
+Ce hackathon était avant tout un moyen d'apprendre en s'ammusant, en découvrant énormément de chose, de méthodes. 
+De plus cette experience nous a permis de développer notre coordination et la gestion d'un projet de ce type en équipe;
 
 ## Notre Travail
 
