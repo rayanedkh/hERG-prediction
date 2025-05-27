@@ -7,7 +7,7 @@ Ce dossier contient **5 sous-dossiers**:
 - Transformers
 - Final
 
-Dans le cadre de ce Hackathon, nous avons décidé pour les tâches 1 et 3 de combiner plusieurs modèles.
+Dans le cadre de ce Hackathon, nous avons décidé pour les tâches 1 et 3 (détéction sur un set de test uniforme) de combiner plusieurs modèles.
 
 Dans les dataset nous avions 3 types de features
 - Descriptives
