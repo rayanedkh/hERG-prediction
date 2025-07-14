@@ -57,7 +57,7 @@ All molecular features were generated using the rdkit package (https://www.rdkit
 
 ## Présentation
 
-Nous avons effectué ce projet en équipe de 3 (Merci à mes compagnons Noa Andre et Rayane Dakhlaoui) et sommes arrivés finaliste.
+Nous avons effectué ce projet en équipe de 3 (Merci à mes compagnons Noa Andre @noaac et Alexandre Mallez @AlexHibo) et sommes arrivés finaliste.
 
 Ce hackathon était avant tout un moyen d'apprendre en s'amusant, en découvrant énormément de choses, de méthodes.  
 De plus cette expérience nous a permis de développer notre coordination et la gestion d'un projet de ce type en équipe.
