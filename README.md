@@ -4,8 +4,7 @@
 
 ## About the project:
 
-The following datasets are provided for the hackathon at Télécom Paris with the student association,  
-taking place from 05/23/2025 to 05/25/2025.  
+The following datasets are provided for the hackathon at Télécom Paris with the student association Télécom IA, taking place from 05/23/2025 to 05/25/2025.  
 This event is organized by MARGO, Qubit-pharmaceuticals and IBM.
 
 The aim of this event is to build a binary classifier capable of predicting whether a molecule is toxic or not.  
